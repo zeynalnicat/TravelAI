@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("kapt")
+
+
 }
 
 android {
@@ -56,9 +59,15 @@ dependencies {
     implementation(libs.android.recyclerview.selection)
     implementation(libs.android.recylcerview)
     implementation(libs.com.github.bumptech.glide)
-
+    implementation(libs.com.google.dagger.hilt)
+    implementation(libs.com.google.dagger)
 
     testImplementation(libs.junit)
+    annotationProcessor(libs.com.github.bumptech.glide.compiler)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    kapt(libs.daggerCompiler)
+    kapt(libs.lifecycle.livedata)
+
 }
