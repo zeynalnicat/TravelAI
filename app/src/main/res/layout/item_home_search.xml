@@ -1,0 +1,26 @@
+<!-- item_button_layout.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:paddingStart="10dp"
+    >
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_button"
+        android:drawableStart="@drawable/icon_search"
+        android:drawablePadding="10dp"
+        android:elevation="10dp"
+        android:drawableTint="@color/secondary"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="20dp"
+        android:text="Restaurant"
+        android:textAllCaps="false"
+        android:textColorHint="@color/secondary" />
+
+
+</RelativeLayout>

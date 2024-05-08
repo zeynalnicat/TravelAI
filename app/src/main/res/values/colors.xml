@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="secondary">#69317F</color>
     <color name="primary">#E8AEFF</color>
+    <color name="button">#A94FCC</color>
+    <color name="pink_star">#D363FF</color>
 </resources>
