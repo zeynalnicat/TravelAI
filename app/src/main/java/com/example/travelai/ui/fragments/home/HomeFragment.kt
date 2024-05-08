@@ -13,8 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.travelai.R
 import com.example.travelai.databinding.FragmentHomeBinding
 import com.example.travelai.domain.home.DiscoverCity
+import com.example.travelai.domain.home.MoreCity
 import com.example.travelai.domain.home.SearchItem
 import com.example.travelai.ui.fragments.home.adapters.DiscoverCityAdapter
+import com.example.travelai.ui.fragments.home.adapters.MoreCityAdapter
 import com.example.travelai.ui.fragments.home.adapters.SearchItemAdapter
 
 
@@ -28,7 +30,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater)
         setAdapter()
         setDiscoverCitySection()
-
+        setMoreDiscoverSection()
         return binding.root
     }
 
@@ -46,7 +48,7 @@ class HomeFragment : Fragment() {
         )
         val adapter = SearchItemAdapter()
         adapter.submitList(items)
-        binding.recyclerViewSearch.layoutManager = GridLayoutManager(requireContext(),2)
+        binding.recyclerViewSearch.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerViewSearch.adapter = adapter
     }
 
@@ -113,9 +115,27 @@ class HomeFragment : Fragment() {
         )
         val adapter = DiscoverCityAdapter()
         adapter.submitList(listItems)
-        binding.recyclerViewDiscover.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerViewDiscover.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewDiscover.adapter = adapter
 
+    }
+
+    fun setMoreDiscoverSection() {
+        val listItems = listOf(
+            MoreCity("Sheki Azerbaijan", R.drawable.mountain),
+            MoreCity("Quba Azerbaijan", R.drawable.mountain),
+            MoreCity("Qusar Azerbaijan", R.drawable.mountain),
+            MoreCity("Qebele Azerbaijan", R.drawable.mountain),
+            MoreCity("Shamaxi Azerbaijan", R.drawable.mountain),
+            MoreCity("Qazax Azerbaijan", R.drawable.mountain),
+            MoreCity("Qax Azerbaijan", R.drawable.mountain),
+        )
+
+        val adapter = MoreCityAdapter()
+        adapter.submitList(listItems)
+        binding.recyclerViewMoreDiscover.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerViewMoreDiscover.adapter=adapter
     }
 
 

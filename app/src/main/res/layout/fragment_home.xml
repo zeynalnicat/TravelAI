@@ -103,7 +103,7 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="800dp"
         android:translationY="-220dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toStartOf="@id/rightGuideline"
@@ -133,6 +133,27 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtHeaderDiscover" />
+
+            <TextView
+                android:id="@+id/txtMoreDiscover"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Discover more in Azerbaijan"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewDiscover" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMoreDiscover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMoreDiscover" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

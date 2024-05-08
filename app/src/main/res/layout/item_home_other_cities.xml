@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="120dp"
+    android:layout_marginEnd="20dp">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:translationZ="10dp"
+        android:background="@drawable/layout_fade"
+        android:clipToOutline="true"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imgCity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/img_background"
+        android:clipToOutline="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/flame_towers" />
+
+    <TextView
+        android:id="@+id/txtCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:translationZ="11dp"
+        android:layout_margin="7dp"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Sheki Azerbaijan" />
+
+</FrameLayout>
