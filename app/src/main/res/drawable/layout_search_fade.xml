@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!-- overlay_gradient.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:centerColor="#60000000"
+        android:endColor="#90000000"
+        android:endX="0"
+        android:endY="1"
+        android:gradientRadius="100%"
+        android:startColor="#C0000000"
+        android:startX="0"
+        android:startY="0"
+        android:type="linear" />
+    <corners android:radius="30dp" />
+
+    <corners android:radius="30dp" />
+</shape>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    >
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/recentItem"
+        android:layout_width="164dp"
+        android:layout_height="50dp"
+        android:textAllCaps="false"
+        android:background="@drawable/icon_button_recently"
+        android:text="Egypt"
+        android:textColor="@color/secondary" />
+</FrameLayout>

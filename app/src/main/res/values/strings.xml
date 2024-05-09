@@ -2,4 +2,9 @@
     <string name="app_name">TravelAI</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="search_recently">Recently Searched</string>
+    <string name="search_top_destination">Top Destinations</string>
 </resources>
