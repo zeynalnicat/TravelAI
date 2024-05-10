@@ -61,7 +61,7 @@ dependencies {
     implementation(libs.com.github.bumptech.glide)
     implementation(libs.com.google.dagger.hilt)
     implementation(libs.com.google.dagger)
-
+//    implementation(libs.com.arasthel.spanned)
     testImplementation(libs.junit)
     annotationProcessor(libs.com.github.bumptech.glide.compiler)
     androidTestImplementation(libs.androidx.junit)

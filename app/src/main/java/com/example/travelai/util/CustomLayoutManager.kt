@@ -1,43 +1,52 @@
- package com.example.travelai.util
-
+package com.example.travelai.util
 import android.content.Context
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
-class CustomLayoutManager(context: Context) : LinearLayoutManager(context) {
+class CustomLayoutManager(private val context: Context) : StaggeredGridLayoutManager(2, VERTICAL) {
 
     override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
         if (itemCount == 0 || state?.isPreLayout == true) {
             return
         }
 
-        detachAndScrapAttachedViews(recycler!!)
+        recycler?.let {
+            detachAndScrapAttachedViews(it)
 
-        var top = paddingTop
-        var bottom = 0
+            val columnWidth = width / 2
+            val columnHeights = IntArray(2)
 
-        for (i in 0 until itemCount) {
-            val view = recycler!!.getViewForPosition(i)
-            addView(view)
+            for (i in 0 until itemCount) {
+                val viewType = i % 2
+                val view = it.getViewForPosition(i)
 
-            measureChildWithMargins(view, 0, 0)
+                val lp = view.layoutParams as RecyclerView.LayoutParams
 
+                if (viewType == VIEW_TYPE_LEFT) {
+                    lp.height = 2 * columnWidth
+                } else {
+                    lp.height = columnWidth
+                }
 
-            val width = getDecoratedMeasuredWidth(view)
-            val height = getDecoratedMeasuredHeight(view)
-            val left = paddingLeft
-            val right = left + width
-            bottom = top + height
+                lp.width = columnWidth
 
-            if (i % 2 == 0) {
-                bottom *= 2
+                addView(view)
+
+                measureChildWithMargins(view, 0, 0)
+
+                val column = if (viewType == VIEW_TYPE_LEFT) 0 else 1
+                val top = columnHeights[column] ?: 0
+                val bottom = top + lp.height
+
+                layoutDecoratedWithMargins(view, columnWidth * column, top, columnWidth * (column + 1), bottom)
+
+                columnHeights[column] = bottom
             }
-
-
-            layoutDecorated(view, left, top, right, bottom)
-
-
-            top = bottom
         }
+    }
+
+    companion object {
+        const val VIEW_TYPE_LEFT = 0
+        const val VIEW_TYPE_RIGHT = 1
     }
 }

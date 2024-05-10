@@ -46,7 +46,14 @@ class MoreCityAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 SpecialViewHolder(binding)
             }
 
-            else -> throw IllegalArgumentException("Invalid view type")
+            else->{
+                val binding = ItemSearchTopDestinationBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                SpecialViewHolder(binding)
+            }
         }
     }
 

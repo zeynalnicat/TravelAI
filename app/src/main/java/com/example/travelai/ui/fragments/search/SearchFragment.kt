@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.travelai.R
 import com.example.travelai.databinding.FragmentSearchBinding
@@ -18,7 +16,7 @@ import com.example.travelai.util.CustomLayoutManager
 
 
 class SearchFragment : Fragment() {
-    private lateinit var binding : FragmentSearchBinding
+    private lateinit var binding: FragmentSearchBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,17 +30,18 @@ class SearchFragment : Fragment() {
     }
 
 
-    fun setRecentlySearched(){
-        val items = listOf("Egypt","Orlando","Poland","Morocco","Canada")
+    fun setRecentlySearched() {
+        val items = listOf("Egypt", "Orlando", "Poland", "Morocco", "Canada")
         val adapter = RecentlySearchedAdapter()
         adapter.submitList(items)
-        binding.recyclerRecentlySearched.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerRecentlySearched.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerRecentlySearched.adapter = adapter
 
     }
 
 
-    fun setAnimation(){
+    fun setAnimation() {
         val anim = ObjectAnimator.ofFloat(binding.cardView, "translationY", 220f, 0f).apply {
             duration = 800
 
@@ -51,23 +50,24 @@ class SearchFragment : Fragment() {
 
     }
 
-    fun setTopDestination(){
+    fun setTopDestination() {
         val listItems = listOf(
             MoreCity("Sheki Azerbaijan", R.drawable.mountain, true),
-            MoreCity("Quba Azerbaijan", R.drawable.mountain,true),
-            MoreCity("Qusar Azerbaijan", R.drawable.mountain,true),
-            MoreCity("Qebele Azerbaijan", R.drawable.mountain,true),
-            MoreCity("Shamaxi Azerbaijan", R.drawable.mountain,true),
-            MoreCity("Qazax Azerbaijan", R.drawable.mountain,true),
-            MoreCity("Qax Azerbaijan", R.drawable.mountain,true),
+            MoreCity("Quba Azerbaijan", R.drawable.mountain, true),
+            MoreCity("Qusar Azerbaijan", R.drawable.mountain, true),
+            MoreCity("Qebele Azerbaijan", R.drawable.mountain, true),
+            MoreCity("Shamaxi Azerbaijan", R.drawable.mountain, true),
+            MoreCity("Qazax Azerbaijan", R.drawable.mountain, true),
+            MoreCity("Qax Azerbaijan", R.drawable.mountain, true),
         )
 
         val adapter = MoreCityAdapter()
         adapter.submitList(listItems)
-        val layoutManager = GridLayoutManager(requireContext(),2)
-        binding.recyclerTopDestination.layoutManager = layoutManager
-        binding.recyclerTopDestination.adapter = adapter
-
+        val layoutManager = CustomLayoutManager(requireContext())  // there is exception
+        binding.recyclerTopDestination?.apply {
+            this.layoutManager = layoutManager
+            this.adapter = adapter
+        }
     }
 
 }
