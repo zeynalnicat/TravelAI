@@ -1,5 +1,6 @@
 package com.example.travelai.ui.fragments.plans.buildplan
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,15 +25,16 @@ class SelectActivitiesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSelectActivitiesBinding.inflate(inflater)
+        setAnimation()
         setNavigation()
         setAdapter()
+
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
 
     }
@@ -64,6 +66,14 @@ class SelectActivitiesFragment : Fragment() {
         binding.btnClose.setOnClickListener {
             findNavController().popBackStack()
         }
+    }
+
+
+    private fun setAnimation() {
+        val anim = ObjectAnimator.ofFloat(binding.edtSearch, "translationY", 400f, 0f).apply {
+            duration = 400
+        }
+        anim.start()
     }
 
 }
