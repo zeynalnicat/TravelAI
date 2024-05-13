@@ -11,7 +11,7 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/plansFragment"
+        android:id="@+id/plansFragmentS"
         android:name="com.example.travelai.ui.fragments.plans.PlansFragment"
         android:label="fragment_plans"
         tools:layout="@layout/fragment_plans" />
@@ -30,4 +30,27 @@
         android:name="com.example.travelai.ui.fragments.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/buildPlanFragment"
+        android:name="com.example.travelai.ui.fragments.plans.buildplan.BuildPlanFragment"
+        android:label="fragment_build_plan"
+        tools:layout="@layout/fragment_build_plan" >
+        <action
+            android:id="@+id/action_buildPlanFragment_to_selectTimeFragment"
+            app:destination="@id/selectTimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectTimeFragment"
+        android:name="com.example.travelai.ui.fragments.plans.buildplan.SelectTimeFragment"
+        android:label="fragment_select_time"
+        tools:layout="@layout/fragment_select_time" >
+        <action
+            android:id="@+id/action_selectTimeFragment_to_selectActivitiesFragment"
+            app:destination="@id/selectActivitiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectActivitiesFragment"
+        android:name="com.example.travelai.ui.fragments.plans.buildplan.SelectActivitiesFragment"
+        android:label="SelectActivitiesFragment"
+        tools:layout="@layout/fragment_select_activities"/>
 </navigation>

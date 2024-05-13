@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/txtCity"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:translationZ="11dp"
@@ -37,5 +37,20 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:text="Sheki Azerbaijan" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/index"
+        android:layout_width="24dp"
+        android:clickable="false"
+        android:visibility="gone"
+        android:layout_gravity="end"
+        android:background="@drawable/icon_button"
+        android:layout_height="24dp"
+        android:layout_margin="15dp"
+        android:translationZ="12dp"
+        android:textSize="10sp"
+        android:padding="0dp"
+        android:textColor="@color/pink_star"
+        android:text="1" />
 
 </FrameLayout>

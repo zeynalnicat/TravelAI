@@ -6,15 +6,16 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.travelai.databinding.ItemRecentlySearchedBinding
+import com.example.travelai.domain.search.SearchItem
 
-class RecentlySearchedAdapter:RecyclerView.Adapter<RecentlySearchedAdapter.ViewHolder>() {
+class RecentlySearchedAdapter(private val nav: ()->Unit = {}):RecyclerView.Adapter<RecentlySearchedAdapter.ViewHolder>() {
 
-    private val diffCallBack = object : DiffUtil.ItemCallback<String>() {
-        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+    private val diffCallBack = object : DiffUtil.ItemCallback<SearchItem>() {
+        override fun areItemsTheSame(oldItem: SearchItem, newItem: SearchItem): Boolean {
             return oldItem === newItem
         }
 
-        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+        override fun areContentsTheSame(oldItem: SearchItem, newItem: SearchItem): Boolean {
             return oldItem == newItem
         }
     }
@@ -37,12 +38,19 @@ class RecentlySearchedAdapter:RecyclerView.Adapter<RecentlySearchedAdapter.ViewH
     }
 
     inner class ViewHolder(private val binding:ItemRecentlySearchedBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(item:String){
-           binding.recentItem.text = item
+        fun bind(item:SearchItem){
+           binding.recentItem.text = item.title
+
+            if(item.isTime){
+                binding.recentItem.setOnClickListener {
+                    nav()
+                }
+            }
+
         }
     }
 
-    fun submitList(items:List<String>){
+    fun submitList(items:List<SearchItem>){
         diffUtil.submitList(items)
     }
 }
