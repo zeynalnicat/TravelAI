@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.travelai.databinding.ItemHomeOtherCitiesBinding
 import com.example.travelai.databinding.ItemSearchTopDestinationBinding
 import com.example.travelai.domain.home.MoreCity
+import com.example.travelai.ui.fragments.plans.buildplan.SelectActivitiesFragment
 
-class MoreCityAdapter(private val nav: () -> Unit = {}) :
+class MoreCityAdapter(private val nav: () -> Unit = {},private val fragment:SelectActivitiesFragment?=null) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val VIEW_TYPE_NORMAL = 1
@@ -109,6 +110,7 @@ class MoreCityAdapter(private val nav: () -> Unit = {}) :
                     }
                     item.isSelected = !item.isSelected
                     notifyItemChanged(layoutPosition)
+                    fragment?.updateVisibility(selected.size)
                 }
             }
 

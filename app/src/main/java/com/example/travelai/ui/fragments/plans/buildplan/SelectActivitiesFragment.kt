@@ -2,6 +2,7 @@ package com.example.travelai.ui.fragments.plans.buildplan
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,13 +33,6 @@ class SelectActivitiesFragment : Fragment() {
         return binding.root
     }
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
     private fun setAdapter() {
         val lists = listOf(
             MoreCity("Restaurants", R.drawable.food, true, isBuildPlan = true),
@@ -53,7 +47,10 @@ class SelectActivitiesFragment : Fragment() {
         )
 
         adapter =
-            MoreCityAdapter { findNavController().navigate(R.id.action_selectTimeFragment_to_selectActivitiesFragment) }
+            MoreCityAdapter(
+                { findNavController().navigate(R.id.action_selectTimeFragment_to_selectActivitiesFragment) },
+                this
+            )
 
         adapter.submitList(lists)
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
@@ -62,10 +59,23 @@ class SelectActivitiesFragment : Fragment() {
 
     }
 
+    fun updateVisibility(count: Int) {
+        val layoutParam = binding.cardSubmit.layoutParams
+
+        layoutParam.height = if (count > 0) 100 else 0
+        binding.btnContinue.visibility = if (count > 0) View.VISIBLE else View.GONE
+        Log.d("TAG", "updateVisibility: $count")
+    }
+
     private fun setNavigation() {
         binding.btnClose.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        binding.btnContinue.setOnClickListener {
+            findNavController().navigate(R.id.action_selectActivitiesFragment_to_selectBudgetFragment)
+        }
+
     }
 
 

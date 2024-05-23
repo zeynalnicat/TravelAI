@@ -39,7 +39,7 @@ class BuildPlanFragment : Fragment() {
             MoreCity("Kyoto Japan", R.drawable.spain, true),
         )
         val adapter =
-            MoreCityAdapter { findNavController().navigate(R.id.action_buildPlanFragment_to_selectTimeFragment) }
+            MoreCityAdapter ({ findNavController().navigate(R.id.action_buildPlanFragment_to_selectTimeFragment) })
         adapter.submitList(items)
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter

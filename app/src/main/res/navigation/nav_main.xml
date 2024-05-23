@@ -52,5 +52,14 @@
         android:id="@+id/selectActivitiesFragment"
         android:name="com.example.travelai.ui.fragments.plans.buildplan.SelectActivitiesFragment"
         android:label="SelectActivitiesFragment"
-        tools:layout="@layout/fragment_select_activities"/>
+        tools:layout="@layout/fragment_select_activities">
+        <action
+            android:id="@+id/action_selectActivitiesFragment_to_selectBudgetFragment"
+            app:destination="@id/selectBudgetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectBudgetFragment"
+        android:name="com.example.travelai.ui.fragments.plans.buildplan.SelectBudgetFragment"
+        android:label="fragment_select_budget"
+        tools:layout="@layout/fragment_select_budget" />
 </navigation>

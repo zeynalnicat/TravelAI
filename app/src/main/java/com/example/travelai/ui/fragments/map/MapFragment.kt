@@ -103,13 +103,13 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
         googleMap?.setOnMapLongClickListener {
             googleMap?.clear()
-            addCustomMarker(it)
+            addCustomMarker(it,"Marker")
         }
 
 
     }
 
-    private fun addMarker(position: LatLng, title:String): Marker? {
+    private fun addCustomMarker(position: LatLng, title:String): Marker? {
         val marker = googleMap?.addMarker(
             MarkerOptions()
                 .position(position)
@@ -119,11 +119,11 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         return marker
     }
 
-    private fun addCustomMarker(position: LatLng): Marker?{
+    private fun addMarker(position: LatLng,title:String): Marker?{
         val marker = googleMap?.addMarker(
             MarkerOptions()
                 .position(position)
-                .title("Marker")
+                .title(title)
         )
         return marker
     }
