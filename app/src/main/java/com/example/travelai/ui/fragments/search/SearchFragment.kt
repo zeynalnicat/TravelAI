@@ -48,7 +48,7 @@ class SearchFragment : Fragment() {
 
     fun setAnimation() {
         val anim = ObjectAnimator.ofFloat(binding.cardView, "translationY", 220f, 0f).apply {
-            duration = 400
+            duration = 600
 
         }
         anim.start()

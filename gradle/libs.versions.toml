@@ -1,7 +1,7 @@
 [versions]
 agp = "8.3.2"
 kotlin = "1.9.0"
-coreKtx = "1.13.0"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -13,10 +13,12 @@ navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
 recyclerViewSelection = "1.1.0"
 recyclerView = "1.3.2"
-lifecycle = "2.7.0"
+lifecycle = "2.8.0"
 glide = "4.16.0"
 daggerHilt = "2.50"
 spanned = "3.0.2"
+map = "18.2.0"
+places = "3.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +35,9 @@ android-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-vi
 android-lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 com-github-bumptech-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 com-arasthel-spanned = {group="com.arasthel",name="spannedgridlayoutmanager",version.ref="spanned"}
+com-google-play-services-maps = {group="com.google.android.gms",name="play-services-maps",version.ref="map"}
+com-google-libraries-places = {group="com.google.android.libraries.places",name="places",version.ref="places"}
+
 com-github-bumptech-glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
 com-google-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "daggerHilt" }
 com-google-dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
