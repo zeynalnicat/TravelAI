@@ -1,9 +1,12 @@
 package com.example.travelai.ui.fragments.home.adapters
 
+import android.content.Context
+import android.graphics.Point
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuView.ItemView
+import android.view.WindowManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +15,12 @@ import com.example.travelai.databinding.ItemSearchTopDestinationBinding
 import com.example.travelai.domain.home.MoreCity
 import com.example.travelai.ui.fragments.plans.buildplan.SelectActivitiesFragment
 
-class MoreCityAdapter(private val nav: () -> Unit = {},private val fragment:SelectActivitiesFragment?=null) :
+
+class MoreCityAdapter(
+    private val nav: () -> Unit = {},
+    private val fragment: SelectActivitiesFragment? = null,
+    private val screenWidth : Int
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val VIEW_TYPE_NORMAL = 1
@@ -86,6 +94,7 @@ class MoreCityAdapter(private val nav: () -> Unit = {},private val fragment:Sele
     inner class NormalViewHolder(private val binding: ItemHomeOtherCitiesBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MoreCity) {
+
             binding.imgCity.setImageResource(item.img)
             binding.txtCity.text = item.name
         }
@@ -95,13 +104,17 @@ class MoreCityAdapter(private val nav: () -> Unit = {},private val fragment:Sele
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MoreCity) {
 
+            val layoutParam = itemView.layoutParams
+            layoutParam.width = (screenWidth * 0.42).toInt()
+            itemView.layoutParams = layoutParam
+
             itemView.setOnClickListener {
                 nav()
             }
 
             if (item.isBuildPlan) {
                 binding.index.visibility = if (item.isSelected) View.VISIBLE else View.GONE
-                binding.index.text = (selected.indexOf(item)+1).toString()
+                binding.index.text = (selected.indexOf(item) + 1).toString()
                 itemView.setOnClickListener {
                     if (!item.isSelected) {
                         selected.add(item)

@@ -1,11 +1,16 @@
 package com.example.travelai.ui.fragments.plans.buildplan
 
 import android.animation.ObjectAnimator
+import android.content.Context
+import android.content.Context.WINDOW_SERVICE
+import android.graphics.Point
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
@@ -34,6 +39,8 @@ class SelectActivitiesFragment : Fragment() {
     }
 
     private fun setAdapter() {
+
+        val screenWidth = resources.displayMetrics.widthPixels
         val lists = listOf(
             MoreCity("Restaurants", R.drawable.food, true, isBuildPlan = true),
             MoreCity("Luxury Hotels", R.drawable.food, true, isBuildPlan = true),
@@ -49,7 +56,7 @@ class SelectActivitiesFragment : Fragment() {
         adapter =
             MoreCityAdapter(
                 { findNavController().navigate(R.id.action_selectTimeFragment_to_selectActivitiesFragment) },
-                this
+                this,screenWidth
             )
 
         adapter.submitList(lists)
@@ -61,7 +68,6 @@ class SelectActivitiesFragment : Fragment() {
 
     fun updateVisibility(count: Int) {
         val layoutParam = binding.cardSubmit.layoutParams
-
         layoutParam.height = if (count > 0) 100 else 0
         binding.btnContinue.visibility = if (count > 0) View.VISIBLE else View.GONE
         Log.d("TAG", "updateVisibility: $count")

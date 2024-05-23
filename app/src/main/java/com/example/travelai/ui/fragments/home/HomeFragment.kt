@@ -124,6 +124,7 @@ class HomeFragment : Fragment() {
     }
 
     fun setMoreDiscoverSection() {
+        val screenWidth = resources.displayMetrics.widthPixels
         val listItems = listOf(
             MoreCity("Sheki Azerbaijan", R.drawable.mountain),
             MoreCity("Quba Azerbaijan", R.drawable.mountain),
@@ -134,7 +135,7 @@ class HomeFragment : Fragment() {
             MoreCity("Qax Azerbaijan", R.drawable.mountain),
         )
 
-        val adapter = MoreCityAdapter()
+        val adapter = MoreCityAdapter(screenWidth = screenWidth)
         adapter.submitList(listItems)
         binding.recyclerViewMoreDiscover.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
         binding.recyclerViewMoreDiscover.adapter=adapter

@@ -56,6 +56,7 @@ class SearchFragment : Fragment() {
     }
 
     fun setTopDestination() {
+        val screenWidth = resources.displayMetrics.widthPixels
         val listItems = listOf(
             MoreCity("Sheki Azerbaijan", R.drawable.switzerland, true),
             MoreCity("Quba Azerbaijan", R.drawable.mountain, true),
@@ -66,7 +67,7 @@ class SearchFragment : Fragment() {
             MoreCity("Qax Azerbaijan", R.drawable.switzerland, true),
         )
 
-        val adapter = MoreCityAdapter()
+        val adapter = MoreCityAdapter(screenWidth = screenWidth)
         adapter.submitList(listItems)
         val layoutManager = GridLayoutManager(requireContext(), 2)  // there is exception
         binding.recyclerTopDestination?.apply {

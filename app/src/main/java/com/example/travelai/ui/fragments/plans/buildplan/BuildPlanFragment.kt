@@ -27,7 +27,7 @@ class BuildPlanFragment : Fragment() {
 
     private fun setAdapter() {
 
-
+        val screenWidth = resources.displayMetrics.widthPixels
         val items = listOf(
             MoreCity("Kyoto Japan", R.drawable.spain, true),
             MoreCity("Cape Town South Africa", R.drawable.mountain, true),
@@ -39,7 +39,7 @@ class BuildPlanFragment : Fragment() {
             MoreCity("Kyoto Japan", R.drawable.spain, true),
         )
         val adapter =
-            MoreCityAdapter ({ findNavController().navigate(R.id.action_buildPlanFragment_to_selectTimeFragment) })
+            MoreCityAdapter ({ findNavController().navigate(R.id.action_buildPlanFragment_to_selectTimeFragment) }, screenWidth = screenWidth)
         adapter.submitList(items)
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
