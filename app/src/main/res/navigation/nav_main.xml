@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_singleFragment"
-            app:destination="@id/singleFragment" />
+            app:destination="@id/singleFragment" >
+            <argument
+                android:name="destination"
+                app:argType="com.example.travelai.domain.home.DiscoverCity"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/plansFragmentS"
@@ -70,5 +74,9 @@
         android:id="@+id/singleFragment"
         android:name="com.example.travelai.ui.fragments.home.SingleFragment"
         android:label="fragment_single"
-        tools:layout="@layout/fragment_single" />
+        tools:layout="@layout/fragment_single" >
+        <argument
+            android:name="destination"
+            app:argType="com.example.travelai.domain.home.DiscoverCity" />
+    </fragment>
 </navigation>

@@ -9,7 +9,7 @@ import com.example.travelai.databinding.ItemHomeDiscoverBinding
 import com.example.travelai.domain.home.DiscoverCity
 import com.example.travelai.domain.home.SearchItem
 
-class DiscoverCityAdapter(private val nav: () -> Unit = {}) :
+class DiscoverCityAdapter(private val nav: (DiscoverCity) -> Unit = {}) :
     RecyclerView.Adapter<DiscoverCityAdapter.ViewHolder>() {
 
     private val diffCallBack = object : DiffUtil.ItemCallback<DiscoverCity>() {
@@ -44,7 +44,7 @@ class DiscoverCityAdapter(private val nav: () -> Unit = {}) :
         fun bind(item: DiscoverCity) {
 
             itemView.setOnClickListener {
-                nav()
+                nav(item)
             }
             binding.txtCategory.text = item.category
             binding.txtTitle.text = item.title

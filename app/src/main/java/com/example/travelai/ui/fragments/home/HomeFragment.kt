@@ -48,6 +48,7 @@ class HomeFragment : Fragment() {
             SearchItem(R.drawable.icon_hotels, "Hotels"),
             SearchItem(R.drawable.icon_flash, "Things to do"),
         )
+
         val adapter = SearchItemAdapter()
         adapter.submitList(items)
         binding.recyclerViewSearch.layoutManager = GridLayoutManager(requireContext(), 2)
@@ -116,8 +117,15 @@ class HomeFragment : Fragment() {
             DiscoverCity(R.drawable.food, "Food", "China Town", 1.7),
             DiscoverCity(R.drawable.food, "Food", "KFC", 4.7),
         )
+
+//        findNavController().navigate(action)
+
         val adapter =
-            DiscoverCityAdapter { findNavController().navigate(R.id.action_homeFragment_to_singleFragment) }
+            DiscoverCityAdapter { destionation ->
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToSingleFragment(destionation)
+                )
+            }
         adapter.submitList(listItems)
         binding.recyclerViewDiscover.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)

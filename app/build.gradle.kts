@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.androidxNavigation)
     kotlin("kapt")
 
 
@@ -64,6 +65,9 @@ dependencies {
     implementation(libs.com.google.libraries.places)
 //    implementation(libs.com.arasthel.spanned)
     testImplementation(libs.junit)
+
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
     implementation(libs.com.google.play.services.maps)
     annotationProcessor(libs.com.github.bumptech.glide.compiler)
     androidTestImplementation(libs.androidx.junit)
