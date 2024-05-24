@@ -9,7 +9,8 @@ import com.example.travelai.databinding.ItemHomeDiscoverBinding
 import com.example.travelai.domain.home.DiscoverCity
 import com.example.travelai.domain.home.SearchItem
 
-class DiscoverCityAdapter : RecyclerView.Adapter<DiscoverCityAdapter.ViewHolder>() {
+class DiscoverCityAdapter(private val nav: () -> Unit = {}) :
+    RecyclerView.Adapter<DiscoverCityAdapter.ViewHolder>() {
 
     private val diffCallBack = object : DiffUtil.ItemCallback<DiscoverCity>() {
         override fun areItemsTheSame(oldItem: DiscoverCity, newItem: DiscoverCity): Boolean {
@@ -41,6 +42,10 @@ class DiscoverCityAdapter : RecyclerView.Adapter<DiscoverCityAdapter.ViewHolder>
     inner class ViewHolder(private val binding: ItemHomeDiscoverBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: DiscoverCity) {
+
+            itemView.setOnClickListener {
+                nav()
+            }
             binding.txtCategory.text = item.category
             binding.txtTitle.text = item.title
             binding.txtRating.text = item.rating.toString()

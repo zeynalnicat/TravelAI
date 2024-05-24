@@ -9,6 +9,7 @@ import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.travelai.R
@@ -115,7 +116,8 @@ class HomeFragment : Fragment() {
             DiscoverCity(R.drawable.food, "Food", "China Town", 1.7),
             DiscoverCity(R.drawable.food, "Food", "KFC", 4.7),
         )
-        val adapter = DiscoverCityAdapter()
+        val adapter =
+            DiscoverCityAdapter { findNavController().navigate(R.id.action_homeFragment_to_singleFragment) }
         adapter.submitList(listItems)
         binding.recyclerViewDiscover.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -137,8 +139,9 @@ class HomeFragment : Fragment() {
 
         val adapter = MoreCityAdapter(screenWidth = screenWidth)
         adapter.submitList(listItems)
-        binding.recyclerViewMoreDiscover.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-        binding.recyclerViewMoreDiscover.adapter=adapter
+        binding.recyclerViewMoreDiscover.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewMoreDiscover.adapter = adapter
     }
 
 

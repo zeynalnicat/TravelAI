@@ -17,5 +17,17 @@ do you have?</string>
 
     <string name="select_budget">Select your budget</string>
     <string name="from">From</string>
+    <string name="txt_about">About</string>
+    <string name="example_text">The Qafqaz Tufandag Hotel welcomes you
+with its charming nature, Eastern hospitality
+and lovely atmosphere. The hotel is located
+at the foot of the Caucasus mountains, on the
+bank of the River Demiraparanchay. You will
+enjoy the lap of nature with dazzling beauty
+of emerald green forests and spectacular
+snowcapped mountains. The distance
+between the city centre of Baku and the hotel
+is 225 km and 20 km from the Qabala
+international airport.</string>
     <string name="reserve">Reserve now</string>
 </resources>

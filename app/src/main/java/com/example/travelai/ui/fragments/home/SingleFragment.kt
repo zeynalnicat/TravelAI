@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.travelai.R
 import com.example.travelai.databinding.FragmentSingleBinding
 
 
@@ -15,7 +17,27 @@ class SingleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSingleBinding.inflate(inflater)
+        setLayout()
+        setNavigation()
         return binding.root
+    }
+
+
+    private fun setLayout(){
+        binding.call.txtName.text = "Call"
+        binding.call.imgIcon.setImageResource(R.drawable.icon_phone)
+
+        binding.email.txtName.text = "Email"
+        binding.email.imgIcon.setImageResource(R.drawable.icon_inbox)
+
+        binding.review.txtName.text =  "Review"
+        binding.review.imgIcon.setImageResource(R.drawable.icon_message)
+    }
+
+    private fun setNavigation(){
+        binding.navBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 
