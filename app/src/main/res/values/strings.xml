@@ -36,4 +36,12 @@ international airport.</string>
     <string name="partner">Partner</string>
     <string name="friend">Friend</string>
     <string name="family">Family</string>
+    <string name="txt_with_ai">With AI</string>
+    <string name="create_plan_ai">Craft your vision:
+Planning your dream,
+one step at a time.</string>
+    
+    <string name="btn_build_plan">Build plan</string>
+    <string name="create_plan_own">Build your plan
+by your own</string>
 </resources>

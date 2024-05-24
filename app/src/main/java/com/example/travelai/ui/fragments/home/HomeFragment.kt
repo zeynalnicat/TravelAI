@@ -17,6 +17,7 @@ import com.example.travelai.databinding.FragmentHomeBinding
 import com.example.travelai.domain.home.DiscoverCity
 import com.example.travelai.domain.home.MoreCity
 import com.example.travelai.domain.home.SearchItem
+import com.example.travelai.ui.activity.MainActivity
 import com.example.travelai.ui.fragments.home.adapters.DiscoverCityAdapter
 import com.example.travelai.ui.fragments.home.adapters.MoreCityAdapter
 import com.example.travelai.ui.fragments.home.adapters.SearchItemAdapter
@@ -30,6 +31,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(true)
         setAdapter()
         setDiscoverCitySection()
         setMoreDiscoverSection()

@@ -10,7 +10,7 @@
         android:icon="@drawable/icon_search"
         android:title="Search" />
     <item
-        android:id="@+id/buildPlanFragment"
+        android:id="@+id/plansFragment"
         android:icon="@drawable/icon_calendar"
         android:title="Plans" />
     <item

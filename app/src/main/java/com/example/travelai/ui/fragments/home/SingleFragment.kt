@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.travelai.R
 import com.example.travelai.databinding.FragmentSingleBinding
 import com.example.travelai.domain.home.DiscoverCity
+import com.example.travelai.ui.activity.MainActivity
 
 
 class SingleFragment : Fragment() {
@@ -18,6 +19,8 @@ class SingleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSingleBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(false)
         setLayout()
         setNavigation()
         return binding.root

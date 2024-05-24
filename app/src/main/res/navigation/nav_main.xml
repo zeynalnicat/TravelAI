@@ -19,10 +19,14 @@
         </action>
     </fragment>
     <fragment
-        android:id="@+id/plansFragmentS"
+        android:id="@+id/plansFragment"
         android:name="com.example.travelai.ui.fragments.plans.PlansFragment"
         android:label="fragment_plans"
-        tools:layout="@layout/fragment_plans" />
+        tools:layout="@layout/fragment_plans" >
+        <action
+            android:id="@+id/action_plansFragment_to_buildPlanFragment"
+            app:destination="@id/buildPlanFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.travelai.ui.fragments.map.MapFragment"

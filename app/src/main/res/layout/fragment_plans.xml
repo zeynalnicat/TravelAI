@@ -7,13 +7,41 @@
     tools:context=".ui.fragments.home.HomeFragment">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Plans"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+     <include
+         android:id="@+id/planAI"
+         app:layout_constraintTop_toTopOf="parent"
+         layout="@layout/item_create_plan"
+         android:layout_width="0dp"
+         android:layout_height="220dp"
+         android:layout_marginTop="20dp"
+         app:layout_constraintStart_toStartOf="@id/leftGuideline"
+         app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+         />
+
+    <include
+        android:id="@+id/planOwn"
+        app:layout_constraintTop_toBottomOf="@id/planAI"
+        layout="@layout/item_create_plan"
+        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,8 @@ class BuildPlanFragment : Fragment() {
     ): View? {
         binding = FragmentBuildPlanBinding.inflate(inflater)
         val activityMain = requireActivity() as MainActivity
-        activityMain.setVisibility(true)
+        activityMain.setVisibility(false)
+        setNavigation()
         setAdapter()
         return binding.root
     }
@@ -49,5 +50,11 @@ class BuildPlanFragment : Fragment() {
 
     }
 
+
+    private fun setNavigation(){
+        binding.btnClose.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
 
 }

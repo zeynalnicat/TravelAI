@@ -37,10 +37,10 @@ class WhosComingFragment : Fragment() {
 
         val screenWidth = resources.displayMetrics.widthPixels
         val items = listOf(
-            WhosComing("Solo", R.drawable.icon_profile),
-            WhosComing("Partner", R.drawable.icon_lovely),
-            WhosComing("Friend", R.drawable.icon_2user),
-            WhosComing("Family", R.drawable.icon_people),
+            WhosComing(resources.getString(R.string.solo), R.drawable.icon_profile),
+            WhosComing(resources.getString(R.string.partner), R.drawable.icon_lovely),
+            WhosComing(resources.getString(R.string.friend), R.drawable.icon_2user),
+            WhosComing(resources.getString(R.string.family), R.drawable.icon_people),
 
             )
         val adapter = WhosComingAdapter({findNavController().navigate(R.id.action_whosComingFragment_to_selectTimeFragment)},screenWidth)
