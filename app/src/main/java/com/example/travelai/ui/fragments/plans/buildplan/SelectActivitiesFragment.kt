@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.travelai.R
 import com.example.travelai.databinding.FragmentSelectActivitiesBinding
 import com.example.travelai.domain.home.MoreCity
+import com.example.travelai.ui.activity.MainActivity
 import com.example.travelai.ui.fragments.home.adapters.MoreCityAdapter
 
 
@@ -31,6 +32,8 @@ class SelectActivitiesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSelectActivitiesBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(false)
         setAnimation()
         setNavigation()
         setAdapter()

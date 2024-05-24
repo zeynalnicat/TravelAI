@@ -12,6 +12,7 @@ import com.example.travelai.R
 
 import com.example.travelai.databinding.FragmentSelectTimeBinding
 import com.example.travelai.domain.search.SearchItem
+import com.example.travelai.ui.activity.MainActivity
 import com.example.travelai.ui.fragments.search.adapters.RecentlySearchedAdapter
 
 class SelectTimeFragment : Fragment() {
@@ -22,6 +23,8 @@ class SelectTimeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSelectTimeBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(false)
         setAnimation()
         setNavigation()
         setAdapter()

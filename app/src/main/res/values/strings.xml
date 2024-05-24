@@ -30,4 +30,10 @@ between the city centre of Baku and the hotel
 is 225 km and 20 km from the Qabala
 international airport.</string>
     <string name="reserve">Reserve now</string>
+
+    <string name="whos_coming">Who’s coming with you</string>
+    <string name="solo">Solo</string>
+    <string name="partner">Partner</string>
+    <string name="friend">Friend</string>
+    <string name="family">Family</string>
 </resources>

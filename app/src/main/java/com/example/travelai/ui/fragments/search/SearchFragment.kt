@@ -12,6 +12,7 @@ import com.example.travelai.R
 import com.example.travelai.databinding.FragmentSearchBinding
 import com.example.travelai.domain.home.MoreCity
 import com.example.travelai.domain.search.SearchItem
+import com.example.travelai.ui.activity.MainActivity
 import com.example.travelai.ui.fragments.home.adapters.MoreCityAdapter
 import com.example.travelai.ui.fragments.search.adapters.RecentlySearchedAdapter
 import com.example.travelai.util.CustomLayoutManager
@@ -25,6 +26,8 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSearchBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(true)
         setAnimation()
         setRecentlySearched()
         setTopDestination()

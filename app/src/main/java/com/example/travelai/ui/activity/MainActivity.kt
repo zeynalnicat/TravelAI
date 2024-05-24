@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val menu: Menu = binding.bottomNavigation.menu
         for (i in 0 until menu.size()) {
             val menuItem = menu.getItem(i)
-            val customMenuView = layoutInflater.inflate(R.layout.custom_menu,null)
+            val customMenuView = layoutInflater.inflate(R.layout.custom_menu, null)
             val iconImageView = customMenuView!!.findViewById<ImageView>(R.id.bottom_nav_icon)
             val textTextView = customMenuView.findViewById<TextView>(R.id.bottom_nav_text)
             iconImageView.setImageDrawable(menuItem.icon)
@@ -38,9 +38,18 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         NavigationUI.setupWithNavController(binding.bottomNavigation, navHostFragment.navController)
 
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+        window.decorView.systemUiVisibility =
+            (View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
 
         window.statusBarColor = Color.TRANSPARENT
 
+    }
+
+     fun setVisibility(visibility: Boolean) {
+        if (visibility) {
+            binding.bottomNavigation.visibility = View.VISIBLE
+        } else {
+            binding.bottomNavigation.visibility = View.GONE
+        }
     }
 }

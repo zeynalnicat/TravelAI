@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.travelai.R
 import com.example.travelai.databinding.FragmentSelectBudgetBinding
+import com.example.travelai.ui.activity.MainActivity
 import com.example.travelai.ui.fragments.plans.buildplan.viewmodel.SelectBudgetViewModel
 import com.google.android.material.animation.AnimatorSetCompat.playTogether
 
@@ -24,6 +25,8 @@ class SelectBudgetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSelectBudgetBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(false)
         setAnimation()
         setNavigation()
 

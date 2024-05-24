@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.travelai.R
 import com.example.travelai.databinding.FragmentBuildPlanBinding
 import com.example.travelai.domain.home.MoreCity
+import com.example.travelai.ui.activity.MainActivity
 import com.example.travelai.ui.fragments.home.adapters.MoreCityAdapter
 
 
@@ -20,6 +21,8 @@ class BuildPlanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentBuildPlanBinding.inflate(inflater)
+        val activityMain = requireActivity() as MainActivity
+        activityMain.setVisibility(true)
         setAdapter()
         return binding.root
     }
@@ -39,7 +42,7 @@ class BuildPlanFragment : Fragment() {
             MoreCity("Kyoto Japan", R.drawable.spain, true),
         )
         val adapter =
-            MoreCityAdapter ({ findNavController().navigate(R.id.action_buildPlanFragment_to_selectTimeFragment) }, screenWidth = screenWidth)
+            MoreCityAdapter ({ findNavController().navigate(R.id.action_buildPlanFragment_to_whosComingFragment) }, screenWidth = screenWidth)
         adapter.submitList(items)
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
