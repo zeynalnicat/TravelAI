@@ -61,6 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/plan_build_plan_select"
         android:textAlignment="center"
         android:textSize="24sp"

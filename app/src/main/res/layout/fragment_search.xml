@@ -65,6 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/search_recently"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -72,27 +73,27 @@
         app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@id/cardView" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerRecentlySearched"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="@id/rightGuideline"
-                app:layout_constraintStart_toStartOf="@id/leftGuideline"
-                app:layout_constraintTop_toBottomOf="@id/txtRecently" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRecentlySearched"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/txtRecently" />
 
-            <TextView
-                android:id="@+id/txtTopDestination"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/search_top_destination"
-                android:textSize="22sp"
-                android:textStyle="bold"
-
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="@id/rightGuideline"
-                app:layout_constraintStart_toStartOf="@id/leftGuideline"
-                app:layout_constraintTop_toBottomOf="@id/recyclerRecentlySearched" />
+    <TextView
+        android:id="@+id/txtTopDestination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/search_top_destination"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/recyclerRecentlySearched" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTopDestination"

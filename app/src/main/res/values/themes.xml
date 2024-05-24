@@ -5,6 +5,7 @@
         <item name="android:actionBarStyle">@style/ThemeActionBar</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="actionBarStyle">@style/ThemeActionBar</item>
+        <item name="android:textViewStyle">@style/PoppinsFont</item>
         <item name="windowActionBarOverlay">true</item>
     </style>
 
@@ -19,5 +20,13 @@
 
     <style name="Theme.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/primary</item>
+    </style>
+
+    <style name="PoppinsFont" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="PoppinsBold" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 </resources>
