@@ -2,4 +2,4 @@
 
 ## App Photos
 
-![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/517c2f98-0786-410d-a4e0-d274286e5701)
+![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/7b1febf9-b7b6-4544-94ac-77875d787860)
