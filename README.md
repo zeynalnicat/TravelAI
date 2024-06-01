@@ -1,10 +1,9 @@
-
+## Intro 
+An Application which serves the user to find near restaurants , hotels via the preferences. They can create their travel plans within prefered timeline or let the AI create for them . (UNDER CONSTRUCTION)
 
 ## App Photos
 
-![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/7b1febf9-b7b6-4544-94ac-77875d787860) ![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/2750512a-83d6-45c4-972a-cea5d493715c)
-  ![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/f02a958f-0930-417c-88a1-11d1140d9149) ![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/b9ca9823-4121-4ccf-9fc3-2b485e87e4f5)  ![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/51d3b01d-db7f-429f-b81e-235b314a1b79)  ![image](https://github.com/zeynalnicat/TravelAI/assets/65115194/a767e7f0-e385-491c-950f-f717c91ad9f2)
-
+![TravelAI](https://github.com/zeynalnicat/TravelAI/assets/65115194/17f45ad6-7d07-4c10-85af-c4534b053518)
 
 
 
